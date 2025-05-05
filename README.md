@@ -1,59 +1,68 @@
-# AngularEchartsDemo
+Angular ECharts 
+This Angular project demonstrates how to integrate ECharts, a powerful data visualization library, within an Angular application. It serves as a basic introduction to Angular components, data binding, and integrating third-party libraries into an Angular app. The app fetches static data and visualizes it using a bar chart with ECharts.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Project Overview
+The application consists of two main components:
 
-## Development server
+AppComponent: Displays the title and a brief description of the application.
 
-To start a local development server, run:
+ChartComponent: Displays a bar chart with static data using ECharts.
 
-```bash
-ng serve
-```
+The app uses Angular's data binding features to pass data between components and render a visualization on the screen. The chart is configured with an array of sample data and is dynamically rendered using ECharts.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Features
+Component Structure:
 
-## Code scaffolding
+Created reusable components for the title/description and chart display.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Data Binding:
 
-```bash
-ng generate component component-name
-```
+Used Angular's data binding features to pass data to the ECharts component.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+ECharts Integration:
 
-```bash
-ng generate --help
-```
+Installed and configured ECharts in the Angular application.
 
-## Building
+Rendered a bar chart with sample data.
 
-To build the project run:
+Angular Lifecycle Hooks:
 
-```bash
-ng build
-```
+Used AfterViewInit to initialize the ECharts instance after the view has been fully rendered.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Steps to Set Up the Project
+Install Dependencies:
 
-## Running unit tests
+Clone this repository to your local machine.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Run npm install to install all necessary dependencies.
 
-```bash
-ng test
-```
+Install ECharts via npm: npm install echarts --save.
 
-## Running end-to-end tests
+Create Angular Components:
 
-For end-to-end (e2e) testing, run:
+AppComponent: Displays a title and brief description.
 
-```bash
-ng e2e
-```
+ChartComponent: Visualizes data using ECharts (bar chart).
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Data Handling:
 
-## Additional Resources
+Defined a simple data model and hardcoded data array.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Passed data to ChartComponent for visualization.
+
+ECharts Integration:
+
+Imported ECharts in ChartComponent.
+
+Initialized the chart using the ngAfterViewInit lifecycle hook.
+
+Configured chart options such as chart type, series data, and axes.
+
+Run the Application:
+
+Run the app using ng serve and open it in your browser.
+
+Challenges Faced
+ECharts Initialization: The main challenge was ensuring the ECharts chart was initialized correctly after the component was rendered. This was solved by using Angular’s AfterViewInit lifecycle hook, which ensures the chart is only initialized once the view is completely ready.
+
+Data Binding: Passing data correctly between components was essential for dynamic chart rendering. I ensured that the data was passed through @Input() properties and updated efficiently.
